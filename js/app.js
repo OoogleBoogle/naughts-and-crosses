@@ -12,25 +12,17 @@
         this.turn = function (space) {
             if (this.crossesTurn) {
                 space.innerHTML = this.cross;
-                this.crossScore += parseInt(space.dataset.score);
+                space.dataset.score = "cross";
                 this.crossesTurn = false;
-                this.winState(this.crossScore);
             } else {
                 space.innerHTML = this.naught;
-                this.naughtScore += parseInt(space.dataset.score);
+                space.dataset.score = "naught";
                 this.crossesTurn = true;
-                this.winState(this.naughtScore);
             }
         };
 
-        this.winState = function (score) {
-            console.log(score);
-            var winningScores = [6, 60, 600, 111, 222, 333, 321, 123, 620, 421, 411];
-            winningScores.forEach(function(winner) {
-                if (score === winner) {
-                    alert("Winner");
-                }
-            })
+        this.winState = function () {
+            // loop through board divs for winning match?
         };
     }
 
