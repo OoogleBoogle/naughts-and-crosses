@@ -1,4 +1,3 @@
-/*global document: false */
 (function () {
     'use strict';
     function Board() {

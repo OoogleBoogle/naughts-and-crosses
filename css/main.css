@@ -370,45 +370,45 @@ textarea {
 .game-container {
   display: flex;
   flex-wrap: wrap;
-  width: 330px;
-  margin: 2em auto; }
+  margin: 2em auto;
+  width: 330px; }
 
 .box {
-  width: 32.9%;
-  height: 100px; }
+  height: 100px;
+  width: 32.9%; }
   .box img {
     width: 100%; }
 
 .top-left {
-  border: 2px solid black;
-  border-top: none;
-  border-left: none; }
+  border: 2px solid #000;
+  border-left: 0;
+  border-top: 0; }
 
 .top-right {
-  border: 2px solid black;
-  border-top: none;
-  border-right: none; }
+  border: 2px solid #000;
+  border-right: 0;
+  border-top: 0; }
 
 .top-center {
-  border-bottom: 2px solid black; }
+  border-bottom: 2px solid #000; }
 
 .center-left {
-  border-right: 2px solid black; }
+  border-right: 2px solid #000; }
 
 .center-right {
-  border-left: 2px solid black; }
+  border-left: 2px solid #000; }
 
 .bottom-left {
-  border: 2px solid black;
-  border-left: none;
-  border-bottom: none; }
+  border: 2px solid #000;
+  border-bottom: 0;
+  border-left: 0; }
 
 .bottom-center {
-  border-top: 2px solid black; }
+  border-top: 2px solid #000; }
 
 .bottom-right {
-  border: 2px solid black;
-  border-right: none;
-  border-bottom: none; }
+  border: 2px solid #000;
+  border-bottom: 0;
+  border-right: 0; }
 
 /*# sourceMappingURL=main.css.map */
