@@ -12,12 +12,22 @@ TODO: Add event listeners to multiple games
         this.crossesTurn = true;
         this.gameWon = false;
         this.turns = 0;
+        var gameContainer = document.querySelector('.game-container').cloneNode(true),
+            boxes = gameContainer.querySelectorAll('.boxes');
+        gameContainer.classList.remove('hidden');
+        document.querySelector('.full-container').appendChild(gameContainer);
 
-        this.newGame = function () {
-            var gameContainer = document.querySelector('.game-container').cloneNode(true);
-                // boxes = gameContainer.querySelectorAll('.box');
-            gameContainer.classList.remove('hidden');
-            document.querySelector('.full-container').appendChild(gameContainer);
+        gameContainer.addEventListener('click', this.initialCheck.bind());
+
+        this.initialCheck = function (e) {
+            var space = e.target;
+            // this check is so you cannot hit draw state by repeatedly clicking on a previously assigned space/box
+            if (Number.isSafeInteger(parseInt(space.dataset.piece))) {
+                this.turn(space, boxes);
+            }
+            if (this.gameWon) {
+                this.reset(boxes);
+            }
         };
 
         this.turn = function (space, boxes) {
@@ -108,20 +118,20 @@ TODO: Add event listeners to multiple games
     document.addEventListener('DOMContentLoaded', function () {
         var gameContainer = document.querySelector('.game-container'),
             boxes = document.querySelectorAll('.box'),
-            newGameButton = document.querySelector('#newGame'),
-            game = new Board();
+            newGameButton = document.querySelector('#newGame');
+            // game = new Board();
         newGameButton.addEventListener('click', function () {
-            game.newGame();
+            var app = new Board();
         });
-        gameContainer.addEventListener('click', function (e) {
-            var space = e.target;
-            // this check is so you cannot hit draw state by repeatedly clicking on a previously assigned space/box
-            if (Number.isSafeInteger(parseInt(space.dataset.piece))) {
-                game.turn(space, boxes);
-            }
-            if (game.gameWon) {
-                game.reset(boxes);
-            }
-        });
+        // gameContainer.addEventListener('click', function (e) {
+        //     var space = e.target;
+        //     // this check is so you cannot hit draw state by repeatedly clicking on a previously assigned space/box
+        //     if (Number.isSafeInteger(parseInt(space.dataset.piece))) {
+        //         game.turn(space, boxes);
+        //     }
+        //     if (game.gameWon) {
+        //         game.reset(boxes);
+        //     }
+        // });
     });
 })();

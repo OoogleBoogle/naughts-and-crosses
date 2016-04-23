@@ -1,27 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <title>Naughts and Crosses</title>
-  <link rel="stylesheet" href="css/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Naughts and Crosses</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body>
-    <h1>Naughts And Crosses</h1>
-    <input type="button" value="New Game" id="newGame">
+    <h1>EXTREME NAUGHTS AND CROSSES</h1>
+    <input type="button" value="Add a New Game" id="newGame">
+    <input type="button" value="Rules" id="showRules">
+    <!-- RULES OVERLAY -->
+    <section class="rules">
+        <div class="container">
+            <h1>Suggested Rules</h1>
+            <p>There are no rules in EXTREME NAUGHTS AND CROSSES. One thing to note the first piece on each board is a cross.
+                Here are some suggestions...</p>
+            <p>
+                Game Style 1: Place as many boards as you like.
+                Then each player must place a piece on each board (but not in the same place) before moving to the next player.
+            </p>
+            <p>
+                Game Style 2 (True EXTREME NAUGHTS AND CROSSES): Place 1 Board. At any time a player can place a new board and take the first turn on that one.
+                Each 'go' you can only place one piece at a time, no matter how many boards there are.
+                Remember, the first go on a new board is a cross. So if naughts starts a second (or third..into infinity) board
+                they play as crosses on the new board.
+            </p>
+        </div>
+    </section>
+    <!-- END OVERLAY -->
     <section class="full-container">
         <section class="game-container hidden">
             <div class="top-left box" data-piece="0"></div>
-            <div class="top-center box"data-piece="1"></div>
-            <div class="top-right box"data-piece="2"></div>
+            <div class="top-center box" data-piece="1"></div>
+            <div class="top-right box" data-piece="2"></div>
             <div class="center-left box" data-piece="3"></div>
             <div class="center box" data-piece="4"></div>
             <div class="center-right box" data-piece="5"></div>
             <div class="bottom-left box" data-piece="6"></div>
             <div class="bottom-center box" data-piece="7"></div>
-            <div class="bottom-right box"data-piece="8"></div>
+            <div class="bottom-right box" data-piece="8"></div>
         </section>
     </section>
-    <script src="js/app.js" charset="utf-8"></script>
+    <script src="js/app2.js" charset="utf-8"></script>
 </body>
+
 </html>

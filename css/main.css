@@ -367,6 +367,10 @@ textarea {
   font: inherit;
   /* 2 */ }
 
+.full-container {
+  display: flex;
+  flex-wrap: wrap; }
+
 .game-container {
   display: flex;
   flex-wrap: wrap;

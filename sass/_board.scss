@@ -1,5 +1,10 @@
 $black: #000;
 
+.full-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .game-container {
   display: flex;
   flex-wrap: wrap;
