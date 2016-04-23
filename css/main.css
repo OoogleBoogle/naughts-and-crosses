@@ -373,6 +373,9 @@ textarea {
   margin: 2em auto;
   width: 330px; }
 
+.hidden {
+  display: none; }
+
 .box {
   height: 100px;
   width: 32.9%; }

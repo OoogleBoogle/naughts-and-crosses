@@ -2,6 +2,7 @@
 /*
 TODO: change out alert boxes
 TODO: Strikethrough on win
+TODO: Add event listeners to multiple games
 */
 (function () {
     'use strict';
@@ -11,6 +12,13 @@ TODO: Strikethrough on win
         this.crossesTurn = true;
         this.gameWon = false;
         this.turns = 0;
+
+        this.newGame = function () {
+            var gameContainer = document.querySelector('.game-container').cloneNode(true);
+                // boxes = gameContainer.querySelectorAll('.box');
+            gameContainer.classList.remove('hidden');
+            document.querySelector('.full-container').appendChild(gameContainer);
+        };
 
         this.turn = function (space, boxes) {
             this.turns++;
@@ -100,7 +108,11 @@ TODO: Strikethrough on win
     document.addEventListener('DOMContentLoaded', function () {
         var gameContainer = document.querySelector('.game-container'),
             boxes = document.querySelectorAll('.box'),
+            newGameButton = document.querySelector('#newGame'),
             game = new Board();
+        newGameButton.addEventListener('click', function () {
+            game.newGame();
+        });
         gameContainer.addEventListener('click', function (e) {
             var space = e.target;
             // this check is so you cannot hit draw state by repeatedly clicking on a previously assigned space/box
