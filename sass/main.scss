@@ -1,6 +1,25 @@
-body {
-  text-align: center;
+// COLORS
+$cream: #f6e4ad;
+$red: #eb2632;
+$blue: #240747;
+$orange: #f0ab8d;
+
+// FONTS
+
+@font-face {
+  font-family: 'firecatmedium';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/FirecatMedium-webfont.eot');
+  src: url('../fonts/FirecatMedium-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/FirecatMedium-webfont.woff') format('woff'),
+    url('../fonts/FirecatMedium-webfont.ttf') format('truetype'),
+    url('../fonts/FirecatMedium-webfont.svg#firecatmedium') format('svg');
 }
 
+
+
 @import 'normalize';
+@import 'app';
 @import 'board';
+@import 'overlay';

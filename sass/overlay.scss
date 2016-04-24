@@ -1,0 +1,25 @@
+
+.overlay {
+  background-color: transparentize($blue, .1);;
+  height: 100vh;
+  left: -102%;
+  position: absolute;
+  top: 0;
+  transition: left .5s cubic-bezier(.68, -.55, .27, 1.55);
+  width: 100vw;
+
+  .rules {
+    background-color: $red;
+    color: $blue;
+    font-size: 1.2em;
+    margin: 3em auto 0;
+    max-width: 738px;
+    padding: 2em;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+    font-size: 1.3em;
+  }
+}

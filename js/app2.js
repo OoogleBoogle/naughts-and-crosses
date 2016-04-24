@@ -2,23 +2,24 @@
 /*
 TODO: change out alert boxes
 TODO: Strikethrough on win
-TODO: Add event listeners to multiple games
 */
 // (function () {
     'use strict';
     function Board () {
+        // clone the hidden html and append to the page
         var gameContainer = document.querySelector('.game-container').cloneNode(true);
         gameContainer.classList.remove('hidden');
         document.querySelector('.full-container').appendChild(gameContainer);
-
+        // set up the game properties
         this.boxes = gameContainer.querySelectorAll('.box');
         this.cross = '<img src="images/cross.png" alt="cross-icon">';
-        this.naught = '<img src="images/nought.png" alt="game-icon">';
+        this.naught = '<img src="images/nought.png" alt="naughts-icon">';
         this.crossesTurn = true;
         this.gameWon = false;
         this.turns = 0;
-        gameContainer.addEventListener('click', this.initialCheck.bind(this));
-    }
+        // add click event to gasme boxes
+        gameContainer.addEventListener('click', this.initialCheck.bind(this)); // make sure 'this' refers to the Board object in the methods
+    };
 
     Board.prototype.initialCheck = function (e) {
         var space = e.target;
@@ -29,7 +30,7 @@ TODO: Add event listeners to multiple games
         if (this.gameWon) {
             this.reset(this.boxes);
         }
-    }
+    };
 
     Board.prototype.turn = function (space, boxes) {
         this.turns++;
@@ -45,7 +46,7 @@ TODO: Add event listeners to multiple games
             this.winState(boxes);
             this.crossesTurn = true;
         }
-    }
+    };
 
     Board.prototype.winState = function (boxes) {
         // check top row
@@ -115,8 +116,20 @@ TODO: Add event listeners to multiple games
     };
 
     document.addEventListener('DOMContentLoaded', function () {
+        var overlay = document.querySelector('.overlay');
         document.querySelector('#newGame').addEventListener('click', function () {
-            var app = new Board;
-        })
+            var app = new Board();
+        });
+        // show modal/hide rules - CSS dealing with the animation
+        document.querySelector('#showRules').addEventListener('click', function () {
+            overlay.style.left = '0';
+        });
+        document.querySelector('#closeRules').addEventListener('click', function () {
+            overlay.style.left = '-102%';
+        });
+        // clear all games
+        document.querySelector('#clear').addEventListener('click', function () {
+            document.querySelector('.full-container').innerHTML = '';
+        });
     });
 // })();

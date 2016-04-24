@@ -1,6 +1,9 @@
-body {
-  text-align: center; }
-
+@font-face {
+  font-family: 'firecatmedium';
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/FirecatMedium-webfont.eot");
+  src: url("../fonts/FirecatMedium-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/FirecatMedium-webfont.woff") format("woff"), url("../fonts/FirecatMedium-webfont.ttf") format("truetype"), url("../fonts/FirecatMedium-webfont.svg#firecatmedium") format("svg"); }
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -367,6 +370,27 @@ textarea {
   font: inherit;
   /* 2 */ }
 
+body {
+  background-color: #f6e4ad;
+  font-family: 'Lato', sans-serif;
+  text-align: center; }
+  body strong {
+    font-weight: 800; }
+  body input[type='button'] {
+    background-color: #240747;
+    border: 0;
+    border-radius: 50px;
+    color: #f6e4ad;
+    margin: 0 2em;
+    outline: 0;
+    padding: 1em; }
+  body input:hover {
+    cursor: pointer; }
+  body > h1 {
+    color: #eb2632;
+    font-family: 'firecatmedium';
+    font-size: 2.8em; }
+
 .full-container {
   display: flex;
   flex-wrap: wrap; }
@@ -417,5 +441,25 @@ textarea {
   border: 2px solid #000;
   border-bottom: 0;
   border-right: 0; }
+
+.overlay {
+  background-color: rgba(36, 7, 71, 0.9);
+  height: 100vh;
+  left: -102%;
+  position: absolute;
+  top: 0;
+  transition: left 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  width: 100vw; }
+  .overlay .rules {
+    background-color: #eb2632;
+    color: #240747;
+    font-size: 1.2em;
+    margin: 3em auto 0;
+    max-width: 738px;
+    padding: 2em; }
+  .overlay a {
+    color: #000;
+    text-decoration: none;
+    font-size: 1.3em; }
 
 /*# sourceMappingURL=main.css.map */
